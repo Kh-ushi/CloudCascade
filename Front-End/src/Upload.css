@@ -1,0 +1,85 @@
+.uploadForm{
+    background-color: rgb(202, 201, 206);
+    border:2px solid #583da1;
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5rem;
+    
+}
+
+.uploadForm form{
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    border-radius: inherit;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+}
+
+.uploadForm form div{
+    margin-top: 2rem;
+}
+
+.uploadUpIcon{
+    width: 100%;
+    height: 50%;
+    border-radius: inherit;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+.uploadUpIcon i{
+
+    font-size: 20rem;
+    color: #583da1;
+   
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-group input{
+
+    border: 2px solid white;
+    height: 30px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: #583da1;
+    width: 70%;
+
+    
+}
+
+.form-group select{
+    width: 30%;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    color: #583da1;
+}
+
+.uploadButton button{
+    background-color: #583da1;
+    color: white;
+    height: 3rem;
+    width: 10rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+    border: 2px solid white;
+}
+
+
+

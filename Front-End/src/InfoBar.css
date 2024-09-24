@@ -1,0 +1,64 @@
+
+.InfoBar{
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    margin-left: 268px;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.icons-settings-bell{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20rem !important;
+}
+
+.icons-settings-bell i{
+    font-size: 25px;
+    color: #583da1;
+    margin-top: 0.2rem;
+}
+
+.icons-settings-bell div{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 0.3rem;
+    background-color: #dedede;
+}
+
+.userInfo{
+    display: flex;
+}
+
+.userInfo p{
+    margin-left:0.5rem;
+    margin-top: 0.8rem;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.userInfo .userImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 0.4rem;
+    background-color: #dedede;
+}
+
+.userImg i{
+    font-size: 25px;
+    color: #583da1;
+    margin-top: 0.2rem;
+    margin-left: 0.3rem;
+    padding: 0.2rem;
+
+}

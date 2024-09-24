@@ -1,0 +1,22 @@
+/* MainBar.css */
+.MainBar {
+    height: 100vh;
+    width: 60vw; 
+    padding: 1rem;
+    margin-left: 265px;
+}
+
+.MainBar-Content {
+    width: 100%; 
+    height: 100%;
+    background-color: #f6f6f6;
+    border: 0.5px solid #f6f6f6;
+}
+
+.AllFiles{
+    background-color: #f6f6f6;
+}
+
+.signUpLink{
+    margin-left: 20rem;
+}

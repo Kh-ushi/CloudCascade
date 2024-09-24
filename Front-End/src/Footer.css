@@ -1,0 +1,22 @@
+
+.Footer {
+    text-align: center;
+    background-color: #f6f6f6;
+    padding: 1rem;
+    position: relative !important;
+    bottom: 0 !important;
+}
+
+
+.Footer ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.Footer a{
+    text-decoration: none;
+    color: #583da1
+}

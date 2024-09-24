@@ -1,0 +1,61 @@
+.SideBar{
+    position: fixed;
+    border: 2px solid black;
+    height: 100vh;
+    width: 15vw;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.child-one{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+
+.child-two{
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+
+
+.child-one div, .child-two div {
+    margin-top: 2rem;
+    background-color: rgba(115, 118, 120, 0.5);
+    text-align: center;
+    cursor: pointer; /* Ensure pointer cursor for clickable items */
+}
+
+.child-one div i, .child-two div i {
+    margin-right: 0.5rem;
+}
+
+.child-one div {
+    height: 12%;
+    border-radius: 1rem;
+}
+
+.child-one div i {
+    margin-top: 0.5rem;
+}
+
+.child-two div {
+    height: 35%;
+    border-radius: 1rem;
+}
+
+.child-two div i {
+    margin-top: 0.5rem;
+}
+
+.selected {
+    background-color: #583da1!important;
+    color: rgb(255, 255, 255) !important;
+    font-weight: bold; 
+}

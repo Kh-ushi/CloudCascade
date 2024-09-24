@@ -1,0 +1,31 @@
+.LastBar {
+    position: fixed; 
+    height: 100vh; 
+    width: 18vw;
+    margin-left: 79.5vw !important;
+    padding: 1rem;
+    padding-top: 1.5rem;
+}
+
+.desc,.Info,.Benefits,.Caution{
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+    background: #f6f6f6;
+    color: #747070;
+}
+
+.desc p{
+    text-align: justify;
+}
+
+
+.Info div,.Benefits ul{
+    margin-left: 1rem;
+}
+
+.h2{
+    margin-top: 4rem;
+}
+
