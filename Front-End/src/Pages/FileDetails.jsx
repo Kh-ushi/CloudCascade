@@ -28,7 +28,7 @@ export default function FileDetails() {
         setDownloading(prev => ({ ...prev, [fileId]: true }));
 
         try {
-            const response = await fetch(`http://localhost:8080/api/retrieveFile/${fileId}`);
+            const response = await fetch(`https://cloudcascade.onrender.com/retrieveFile/${fileId}`);
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
 

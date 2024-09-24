@@ -29,7 +29,7 @@ export default function Upload() {
         };
 
         try {
-        const response = await axios.post('http://localhost:8080/api/uploadFile', formData, config);
+        const response = await axios.post('https://cloudcascade.onrender.com/api/uploadFile', formData, config);
         
           let file=response.data.file[0];
            console.log(file);

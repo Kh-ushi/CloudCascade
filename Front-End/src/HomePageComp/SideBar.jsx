@@ -9,7 +9,7 @@ const SideBar = ({ onSelect, selected, getData, user}) => {
 
     useEffect(() => {
         if (selected === 'DashBoard') {
-            axios.post("http://localhost:8080/api/getCategory")
+            axios.post("https://cloudcascade.onrender.com/api/getCategory")
                 .then(response => {
                     getData(response.data.data);
                 })
