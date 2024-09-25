@@ -6,6 +6,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const session = require('express-session');
+const MongoStore=require('connect-mongo');
 const passport = require('passport');
 const LocalStrategy = require("passport-local");
 const User = require("./models/User");
@@ -21,6 +22,7 @@ const { Redis } = require('@upstash/redis');
 const Category=require("./models/Category");
 const{Readable}=require('stream');
 
+
 const app = express();
 
 const upload = multer({ dest: 'uploads/' });
@@ -31,10 +33,14 @@ const redis = new Redis({
   token:process.env.REDIS_TOKEN,
 });
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
+
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://cloudcascade-1.onrender.com'],
+  methods: ['GET', 'POST'], // Add other methods as needed
+  credentials: true, // If you need to include cookies
+};
+
+app.use(cors(corsOptions));
 
 
 
@@ -43,16 +49,33 @@ app.use(express.static(path.join(__dirname, '../Front-End/dist'))); // Adjust pa
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+const store=MongoStore.create({
+  mongoUrl:process.env.MONGODB_URL,
+  crypto:{
+     secret:process.env.SESSION_SECRET
+  },
+  touchAfter:24*3600
+});
+
+store.on("error", (err) => {
+  console.log("Error in Mongo Session Store", err);
+});
+
+
 const sessionOptions = {
+  store,
   secret:process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized:false,
+  saveUninitialized:true,
   cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true
   }
 };
+
+
 
 app.use(session(sessionOptions));
 app.use(passport.initialize());

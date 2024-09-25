@@ -15,9 +15,11 @@ export default function InfoBar({ getUser, refresh}) {
                 if (data.loggedIn) {
                     setUser(data.user);
                     getUser(data.user);
+                    console.log(data);
                 } else {
                     setUser(data.user);
                     getUser(data.user);
+                    console.log(data);
                 }
             })
             .catch(error => console.error('Error:', error));
