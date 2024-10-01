@@ -10,7 +10,7 @@ export default function Logout({ selectFunc ,refresh ,refreshComp}) {
             setLoading(true);  // Show loading state
 
             // Send request to the backend to log out the user
-            const response = await fetch('https://cloudcascade.onrender.com/api/logout', {
+            const response = await fetch('http://localhost:8080/api/logout', {
                 method: 'POST',
                 credentials: 'include', // Ensures that cookies are sent along with the request
             });

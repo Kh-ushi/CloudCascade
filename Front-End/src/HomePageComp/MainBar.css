@@ -15,8 +15,18 @@
 
 .AllFiles{
     background-color: #f6f6f6;
+    margin-top: 4rem;
 }
 
 .signUpLink{
     margin-left: 20rem;
+}
+
+.trash{
+    margin-left: 5rem;
+    color: #581da3;
+}
+
+.dwnld-btn{
+    color: #581da3;
 }

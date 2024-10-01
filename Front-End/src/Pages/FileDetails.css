@@ -69,3 +69,17 @@ th, td {
 th {
     background-color: #f2f2f2; /* Slight background color for headers */
 }
+
+.all-files .container{
+    margin-top: 4rem;
+}
+
+
+.trash{
+    margin-left: 5rem;
+    color: #581da3;
+}
+
+.dwnld-btn{
+    color: #581da3;
+}

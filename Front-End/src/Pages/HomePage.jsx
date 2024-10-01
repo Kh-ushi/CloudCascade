@@ -4,7 +4,7 @@ import SideBar from '../HomePageComp/SideBar';
 import MainBar from '../HomePageComp/MainBar';
 import LastBar from '../HomePageComp/LastBar';
 
-const HomePage = ({ user,refresh,refreshComp}) => {
+const HomePage = ({ user,refresh,refreshComp,isDeleted,setIsDeleted}) => {
 
   
   const [selectedOption, setSelectedOption] = useState('DashBoard');
@@ -26,6 +26,7 @@ const HomePage = ({ user,refresh,refreshComp}) => {
         selected={selectedOption}
         getData={getData}
         user={user}
+        isDeleted={isDeleted}
       />
 
       <MainBar 
@@ -34,6 +35,8 @@ const HomePage = ({ user,refresh,refreshComp}) => {
         onSelect={handleSelection}
         refresh={refresh}
         refreshComp={refreshComp}
+        setIsDeleted={setIsDeleted}
+        isDeleted={isDeleted}
       />
       <LastBar selectedOption={selectedOption} />
     </div>

@@ -18,7 +18,7 @@ export default function SignUp({selectFunc,refresh,refreshComp}) {
     };
 
     try {
-      const response = await fetch('https://cloudcascade.onrender.com/api/signup', {
+      const response = await fetch('http://localhost:8080/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

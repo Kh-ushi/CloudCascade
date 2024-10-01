@@ -2,14 +2,15 @@ import { useEffect } from "react";
 import "./SideBar.css";
 import axios from 'axios';
 
-const SideBar = ({ onSelect, selected, getData, user}) => {
+const SideBar = ({ onSelect, selected, getData, user, isDeleted }) => {
     const getSelected = (id) => {
         onSelect(id);
     };
 
+
     useEffect(() => {
-        if (selected === 'DashBoard') {
-            axios.post("https://cloudcascade.onrender.com/api/getCategory")
+        if (selected === 'DashBoard' || selected === 'AllFiles') {
+            axios.post("http://localhost:8080/api/getCategory")
                 .then(response => {
                     getData(response.data.data);
                 })
@@ -17,7 +18,20 @@ const SideBar = ({ onSelect, selected, getData, user}) => {
                     console.log("Error from backend: ", err);
                 });
         }
-    }, [selected]);  // Add `refresh` to the dependency array
+    }, [selected]);
+
+   
+    
+    useEffect(() => {
+        axios.post("http://localhost:8080/api/getCategory")
+            .then(response => {
+                getData(response.data.data);
+            })
+            .catch(err => {
+                console.log("Error from backend: ", err);
+            });
+    }, [isDeleted]);  // Only depends on `isDeleted`
+
 
     return (
         <div className="SideBar">
