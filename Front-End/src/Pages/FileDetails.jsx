@@ -17,7 +17,7 @@ export default function FileDetails({ isDeleted, setIsDeleted }) {
     useEffect(() => {
         const checkLoginStatus = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/isLoggedIn', {
+                const response = await fetch('https://cloudcascade.onrender.com/api/isLoggedIn', {
                     method: 'POST',
                     credentials: 'include'
                 });
@@ -65,7 +65,7 @@ export default function FileDetails({ isDeleted, setIsDeleted }) {
         setDownloading(prev => ({ ...prev, [fileId]: true }));
 
         try {
-            const response = await fetch(`http://localhost:8080/api/retrieveFile/${fileId}`);
+            const response = await fetch(`https://cloudcascade.onrender.com/api/retrieveFile/${fileId}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -107,7 +107,7 @@ export default function FileDetails({ isDeleted, setIsDeleted }) {
             console.log(file.fileCategory);
 
             // Pass the file category as a query parameter
-            const response = await fetch(`http://localhost:8080/api/deleteFile/${file._id}?category=${file.fileCategory}`, {
+            const response = await fetch(`https://cloudcascade.onrender.com/api/deleteFile/${file._id}?category=${file.fileCategory}`, {
                 method: 'DELETE', // Ensure you're using the DELETE method
             });
 

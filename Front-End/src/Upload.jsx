@@ -14,7 +14,7 @@ export default function Upload({ selectFunc }) {
     useEffect(() => {
         const checkLoginStatus = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/isLoggedIn', {
+                const response = await fetch('https://cloudcascade.onrender.com/api/isLoggedIn', {
                     method: 'POST',
                     credentials: 'include'
                 });
@@ -54,7 +54,7 @@ export default function Upload({ selectFunc }) {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/api/uploadFile', formData, config);
+            const response = await axios.post('https://cloudcascade.onrender.com/api/uploadFile', formData, config);
             let file = response.data.file[0];
             console.log(file);
             navigate(`/file/${file._id}`, { state: { file } });

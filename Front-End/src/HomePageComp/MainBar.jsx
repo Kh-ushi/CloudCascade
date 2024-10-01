@@ -20,7 +20,7 @@ const MainBar = ({ selectedOption, retrievedData, onSelect, refresh, refreshComp
     useEffect(() => {
         const checkLoginStatus = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/isLoggedIn', {
+                const response = await fetch('https://cloudcascade.onrender.com/api/isLoggedIn', {
                     method: 'POST',
                     credentials: 'include'
                 });
@@ -63,7 +63,7 @@ const MainBar = ({ selectedOption, retrievedData, onSelect, refresh, refreshComp
         setDownloading(prev => ({ ...prev, [fileId]: true }));
 
         try {
-            const response = await fetch(`http://localhost:8080/api/retrieveFile/${fileId}`);
+            const response = await fetch(`https://cloudcascade.onrender.com/api/retrieveFile/${fileId}`);
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
 
@@ -94,7 +94,7 @@ const MainBar = ({ selectedOption, retrievedData, onSelect, refresh, refreshComp
         }
 
         try {
-            const response = await fetch(`http://localhost:8080/api/deleteFile/${file._id}?category=${file.fileCategory}`, {
+            const response = await fetch(`https://cloudcascade.onrender.com/api/deleteFile/${file._id}?category=${file.fileCategory}`, {
                 method: 'DELETE',
             });
 

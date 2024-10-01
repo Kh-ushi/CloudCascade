@@ -10,7 +10,7 @@ const SideBar = ({ onSelect, selected, getData, user, isDeleted }) => {
 
     useEffect(() => {
         if (selected === 'DashBoard' || selected === 'AllFiles') {
-            axios.post("http://localhost:8080/api/getCategory")
+            axios.post("https://cloudcascade.onrender.com/api/getCategory")
                 .then(response => {
                     getData(response.data.data);
                 })
@@ -23,7 +23,7 @@ const SideBar = ({ onSelect, selected, getData, user, isDeleted }) => {
    
     
     useEffect(() => {
-        axios.post("http://localhost:8080/api/getCategory")
+        axios.post("https://cloudcascade.onrender.com/api/getCategory")
             .then(response => {
                 getData(response.data.data);
             })

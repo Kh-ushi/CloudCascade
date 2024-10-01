@@ -7,12 +7,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const session = require('express-session');
-// const MongoStore=require('connect-mongo');
+const MongoStore=require('connect-mongo');
 const passport = require('passport');
 const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 const multer = require("multer");
-// const fs = require('fs');
 const crypto = require('crypto');
 const path = require('path');
 const File = require("./models/File");
@@ -54,22 +53,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// const store=MongoStore.create({
-//   mongoUrl:process.env.MONGODB_URL,
-//   crypto:{
-//      secret:process.env.SESSION_SECRET
-//   },
-//   touchAfter:24*3600
-// });
+const store=MongoStore.create({
+  mongoUrl:process.env.MONGODB_URL,
+  crypto:{
+     secret:process.env.SESSION_SECRET
+  },
+  touchAfter:24*3600
+});
 
-// store.on("error", (err) => {
-//   console.log("Error in Mongo Session Store", err);
-// });
+store.on("error", (err) => {
+  console.log("Error in Mongo Session Store", err);
+});
 
 
 
 const sessionOptions = {
-  // store,
+  store,
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,

@@ -6,7 +6,7 @@ export default function InfoBar({ getUser, refresh}) {
 
     useEffect(() => {
         console.log("Refersh Changed :",refresh);
-        fetch('http://localhost:8080/api/isLoggedIn', {
+        fetch('https://cloudcascade.onrender.com/api/isLoggedIn', {
             method: 'POST',
             credentials: 'include',
         })
